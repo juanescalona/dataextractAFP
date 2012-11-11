@@ -32,11 +32,12 @@
 	
 	echo $datos->AFPtoObject()->Cuprum;
 	
-	
 	// Retorna: 11,4 
 	
 	// Datos en JSON
 	
 	echo $datos->AFPtoJSON();
 	
-	// Retorna: {"Capital":"11,4","Cuprum":"11,4","Habitat":"11,2","PlanVital":"12,3","Provida":"11,5","Modelo":"10,7"}
+	// Retorna: 
+	
+	{"Capital":"11,4","Cuprum":"11,4","Habitat":"11,2","PlanVital":"12,3","Provida":"11,5","Modelo":"10,7"}

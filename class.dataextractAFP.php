@@ -7,8 +7,8 @@ class AFP{
 	    
 		$url = "https://www.previred.com/indicadores/indicadores.htm";
 		// Se usa curl, en todos los servidores no sirve file_get_contents()		
-		$ch	= curl_init($url);
-		$date = date('d-m-Y');
+		$ch		= curl_init($url);
+		$date 	= date('d-m-Y');
 						
 		if(!file_exists('indicadores_'.$date.'.txt')){
 		
@@ -27,12 +27,12 @@ class AFP{
 		$tx = explode('</table>',$tx[1]);
 		
 		// Se obtiene el nombre de la AFP
-		$expr_nom = "|&nbsp;(.*)</[^>]+>|U";
-		$c = preg_match_all($expr_nom,$tx[0], $nombreafp);		
+		$expr_nom 	= "|&nbsp;(.*)</[^>]+>|U";
+		$c 			= preg_match_all($expr_nom,$tx[0], $nombreafp);		
 		
 		// Se obtienen sus porcentajes
-		$expr_porc = "|[0-9]{2}\,[0-9]{1,2}|U";
-		$p = preg_match_all($expr_porc,$tx[0],$porcentaje);
+		$expr_porc 	= "|[0-9]{2}\,[0-9]{1,2}|U";
+		$p 			= preg_match_all($expr_porc,$tx[0],$porcentaje);
 
 		// Se asocian los arrays
 		for($i=0;$i<$p;$i++){
