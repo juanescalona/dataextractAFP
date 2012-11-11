@@ -9,22 +9,37 @@
 <p>Ejemplo</p>
 
 <?php
+require_once("class.dataextractAFP.php");
+$datos = new AFP;
 
-	// utilizar un array
-	$afp = AFP::AFPtoArray();
-	
-	print_r($afp);
-	
-	// utilizar un objeto
-	
-	$afp = AFP::AFPtoObject();
-	
-	echo $afp->Cuprum;
-	
-	// Datos en JSON
-	
-	$afp = AFP::AFPtoJSON();
-	
-	echo $afp;
+// utilizar un array
+print_r($datos->AFPtoArray());
 
+/* Retorna:
+
+	Array
+	(
+	    [Capital] => 11,4
+	    [Cuprum] => 11,4
+	    [Habitat] => 11,2
+	    [PlanVital] => 12,3
+	    [Provida] => 11,5
+	    [Modelo] => 10,7
+	)
+
+*/
+
+
+// utilizar un objeto
+
+echo $datos->AFPtoObject()->Cuprum;
+
+
+// Retorna: 11,4 
+
+// Datos en JSON
+
+echo $datos->AFPtoJSON();
+
+// Retorna: {"Capital":"11,4","Cuprum":"11,4","Habitat":"11,2","PlanVital":"12,3","Provida":"11,5","Modelo":"10,7"}
 ?>

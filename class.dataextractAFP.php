@@ -30,13 +30,13 @@ class AFP{
 		$expr_nom = "|&nbsp;(.*)</[^>]+>|U";
 		$c = preg_match_all($expr_nom,$tx[0], $nombreafp);		
 		
-		// Se obtienen los porcentajes
-		$expr_porc = "[0-9]{2}\,[0-9]{1,2}";
-		$p = preg_match_all('|<td align="center" class="gris5">'.$expr_porc.'|',$tx[0],$porcentaje);
+		// Se obtienen sus porcentajes
+		$expr_porc = "|[0-9]{2}\,[0-9]{1,2}|U";
+		$p = preg_match_all($expr_porc,$tx[0],$porcentaje);
 
 		// Se asocian los arrays
 		for($i=0;$i<$p;$i++){
-			$this->afp[trim($nombreafp[1][$i])] = $porcentaje[0][$i];
+			$this->afp[trim($nombreafp[1][$i])] = trim($porcentaje[0][$i]);
 		}
 		
 		return;
