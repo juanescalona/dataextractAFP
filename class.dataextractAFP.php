@@ -30,7 +30,7 @@ class AFP{
 		$expr_nom = "|&nbsp;(.*)</[^>]+>|U";
 		$c = preg_match_all($expr_nom,$tx[0], $nombreafp);		
 		
-		// Se obtienen sus porcentajes
+		// Se obtienen los porcentajes
 		$expr_porc = "[0-9]{2}\,[0-9]{1,2}";
 		$p = preg_match_all('|<td align="center" class="gris5">'.$expr_porc.'|',$tx[0],$porcentaje);
 
