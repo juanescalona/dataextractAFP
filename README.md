@@ -8,8 +8,6 @@
 </ul>
 <p>Ejemplo</p>
 
-<?php
-require_once("class.dataextractAFP.php");
 $datos = new AFP;
 
 // utilizar un array
@@ -42,4 +40,3 @@ echo $datos->AFPtoObject()->Cuprum;
 echo $datos->AFPtoJSON();
 
 // Retorna: {"Capital":"11,4","Cuprum":"11,4","Habitat":"11,2","PlanVital":"12,3","Provida":"11,5","Modelo":"10,7"}
-?>
