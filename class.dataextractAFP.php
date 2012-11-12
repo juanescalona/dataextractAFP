@@ -3,7 +3,7 @@
 class AFP{
 	protected $afp = array();
 	
-	function __construct(){
+	public function __construct(){
 	    
 		$url = "https://www.previred.com/indicadores/indicadores.htm";
 		// Se usa curl, en todos los servidores no sirve file_get_contents()		
@@ -43,17 +43,17 @@ class AFP{
 	}
 	
 	// Información en JSON
-	function AFPtoJSON(){
+	public function AFPtoJSON(){
 		return json_encode($this->afp);
 	}
 	
 	// Información en array
-	function AFPtoArray(){
+	public function AFPtoArray(){
 		return $this->afp;
 	}
 	
 	// Información a objeto
-	function AFPtoObject(){
+	public function AFPtoObject(){
 		return (object)$this->afp;
 	}
 }
